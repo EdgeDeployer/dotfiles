@@ -1,0 +1,17 @@
+[color]
+	ui = true
+[core]
+  whitespace = warn
+	excludesfile = ~/.gitignore
+	editor = vim
+[push]
+	default = current
+[rerere]
+	enabled = true
+	autoupdate = true
+[help]
+	autocorrect = 1
+[fetch]
+	prune = true
+[alias]
+	co = checkout
