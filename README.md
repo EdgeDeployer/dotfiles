@@ -14,4 +14,5 @@ ln -s -f {dotfiles/,.}irbrc
 ln -s -f {dotfiles/,.}rspec
 ln -s -f {dotfiles/,.}rvmrc
 ln -s -f {dotfiles/,.}tmux.conf
+ln -s -f {dotfiles/,.}teamocil
 ```
