@@ -1,0 +1,45 @@
+ session:
+  name: 'Personal'
+  windows:
+    - name: 'zsh'
+      root: '~/RailsApps/personal/'
+      panes:
+        - cmd: echo 'Pane'
+    - name: 'zsh'
+      root: '~/RailsApps/personal/'
+      panes:
+        - cmd: echo 'Second zsh pane'
+    - name: 'Console'
+      root: '~/RailsApps/personal/'
+      panes:
+        - cmd: rails c
+    - name: 'zsh'
+      root: '~/RailsApps/personal/'
+      panes:
+        - cmd: echo 'Pane'
+    - name: 'zsh'
+      root: '~/RailsApps/personal/'
+      panes:
+        - cmd: echo 'Pane'
+    - name: 'Testing'
+      root: '~/RailsApps/personal/'
+      panes:
+        - cmd: guard
+    - name: 'zsh'
+      root: '~/RailsApps/personal/'
+      panes:
+        - cmd: echo 'Pane'
+    - name: 'zsh'
+      root: '~/RailsApps/personal/'
+      panes:
+        - cmd: echo 'Pane'
+    - name: 'Panezsh'
+      root: '~/RailsApps/personal/'
+      panes:
+        - cmd: echo 'Pane'
+    - name: 'Server'
+      options:
+        move-window:
+      root: '~/RailsApps/personal/'
+      panes:
+        - cmd: rails s --port=3333

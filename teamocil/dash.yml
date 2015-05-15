@@ -1,0 +1,47 @@
+session:
+  name: 'Dash'
+  windows:
+    - name: 'bash'
+      root: '~/RailsApps/dash/'
+      panes:
+        - cmd: cd .; echo 'First Pane'
+    - name: 'bash'
+      root: '~/RailsApps/dash/'
+      panes:
+        - cmd: cd .; echo 'Second bash pane'
+    - name: 'Console'
+      root: '~/RailsApps/dash/'
+      panes:
+        - cmd: cd .; rails c
+    - name: 'bash'
+      root: '~/RailsApps/dash/'
+      panes:
+        - cmd: cd .; echo 'Third bash pane'
+    - name: 'Production'
+      root: '~/RailsApps/dash/'
+      panes:
+        - cmd: cd .; ssh deployer@dash.roirevolution.com
+    - name: 'Testing'
+      root: '~/RailsApps/dash/'
+      panes:
+        - cmd: cd .; echo 'Testing Window'
+    - name: 'bash'
+      root: '~/RailsApps/dash/'
+      panes:
+        - cmd: cd .; echo 'fourth bash pane'
+    - name: 'bash'
+      root: '~/RailsApps/dash/'
+      panes:
+        - cmd: cd .; echo 'fifth bash pane'
+    - name: 'Workers'
+      root: '~/RailsApps/dash/'
+      layout: main-vertical
+      panes:
+        - cmd: cd .; QUEUE=import VERBOSE=1 rake resque:work --trace
+        - cmd: cd .; tail -f log/resque-$(ps aux | awk '/[r]esque-1/ {print $2;exit}').log
+    - name: 'Server'
+      options:
+        move-window:
+      root: '~/RailsApps/dash/'
+      panes:
+        - cmd: cd .; rails s

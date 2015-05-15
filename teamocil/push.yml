@@ -1,0 +1,37 @@
+session:
+  name: 'Push'
+  windows:
+    - name: 'bash'
+      root: '~/RailsApps/push/'
+      panes:
+        - cmd: cd .; echo 'First Pane'
+    - name: 'bash'
+      root: '~/RailsApps/push/'
+      panes:
+        - cmd: cd .; echo 'Second bash pane'
+    - name: 'Console'
+      root: '~/RailsApps/push/'
+      panes:
+        - cmd: cd .; rails c
+    - name: 'Guard'
+      root: '~/RailsApps/push/'
+      panes:
+        - cmd: cd .; guard
+    - name: 'Production'
+      root: '~/RailsApps/push/'
+      panes:
+        - cmd: cd .; ssh deployer@push.roirevolution.com
+    - name: 'Faye'
+      root: '~/RailsApps/push/'
+      panes:
+        - cmd: cd .; rackup faye.ru -s puma -E production -p 8383
+    - name: 'Workers'
+      root: '~/RailsApps/push/'
+      panes:
+        - cmd: cd .; bundle exec rake resque:work --trace
+    - name: 'Server'
+      options:
+        move-window:
+      root: '~/RailsApps/push/'
+      panes:
+        - cmd: cd .; rails s --port=2024

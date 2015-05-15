@@ -1,0 +1,48 @@
+session:
+  name: 'Edge'
+  windows:
+    - name: 'bash'
+      root: '~/RailsApps/edge/'
+      panes:
+        - cmd: cd .; echo 'First Pane'
+    - name: 'bash'
+      root: '~/RailsApps/edge/'
+      panes:
+        - cmd: cd .; echo 'Second bash pane'
+    - name: 'Console'
+      root: '~/RailsApps/edge/'
+      panes:
+        - cmd: cd .; rails c
+    - name: 'Staging'
+      root: '~/RailsApps/edge/'
+      panes:
+        - cmd: cd .; ssh deployer@beta.roirevolution.com
+    - name: 'Beast'
+      root: '~/RailsApps/edge/'
+      panes:
+        - cmd: cd .; ssh deployer@edge.roirevolution.com
+    - name: 'Cyclops'
+      root: '~/RailsApps/edge/'
+      panes:
+        - cmd: cd .; ssh deployer@cyclops.roirevolution.com
+    - name: 'Guard'
+      root: '~/RailsApps/edge/'
+      panes:
+        - cmd: cd .; guard
+    - name: 'Faye'
+      root: '~/RailsApps/edge/'
+      panes:
+        - cmd: cd .; rackup faye.ru -s thin -E production
+    - name: 'Workers'
+      root: '~/RailsApps/edge/'
+      layout: main-vertical
+      panes:
+        - cmd: cd .; QUEUE=notification,schedule VERBOSE=1 rake resque:work --trace
+        - cmd: cd .; tail -f log/resque-$(ps aux | awk '/[r]esque-1/ {print $2;exit}').log
+        - cmd: cd .; rake resque:scheduler
+    - name: 'Server'
+      options:
+        move-window:
+      root: '~/RailsApps/edge/'
+      panes:
+        - cmd: cd .; rails s --port=3003
